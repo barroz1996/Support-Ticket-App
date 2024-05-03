@@ -12,6 +12,7 @@ const app = express()
 
 // Get data from body
 app.unsubscribe(express.json())
+app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 
 app.get('/',(req,res)=>{

@@ -10,14 +10,15 @@ const User = require('../models/userModel')
 // @access Public 
 const registerUser = asyncHandler( async(req,res) => {
   const { name,email,password} = req.body
-
+ 
   // Validation
   if(!name || !email || !password){
-    return res.status(400)
+    res.status(400)
     throw new Error('Please include all fields')
   }
   // Find if user already exists
-  const userExists = await User.findOne({email})
+  const userExists =  await User.findOne({email})
+
   if(userExists){
     res.status(400)
     throw new Error('User already exists')
