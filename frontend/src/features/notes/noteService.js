@@ -38,5 +38,4 @@ const noteService = {
   getNotes,
   createNote,
 }
-
 export default noteService
